@@ -15,11 +15,9 @@ class RoomTest < MiniTest::Test
 
     @song4 = Song.new("Delilah", "Tom Jones")
 
-    @classics_room = Room.new("Classics", 25, [@song1, @song2, @song3], [])
+    @classics_room = Room.new("Classics", 10, [@song1, @song2, @song3], [])
 
-
-
-
+    @pop_room = Room.new("Pop", 1, [@song4], [@guest1])
 
     @guest1 = Guest.new("David", 33, 100.0, "Sweet Caroline", "Neil Diamond")
     @guest2 = Guest.new("Beth", 27, 50.0, "Reach", "S Club 7")
@@ -32,7 +30,7 @@ class RoomTest < MiniTest::Test
   end
 
   def test_get_room_capacity
-    assert_equal(25, @classics_room.capacity)
+    assert_equal(10, @classics_room.capacity)
   end
 
   def test_get_room_occupants
@@ -65,6 +63,11 @@ class RoomTest < MiniTest::Test
     assert_equal(1, @classics_room.occupants.length)
   end
 
-
+  def test_add_to_full_room
+    @pop_room.add_guest_to_room(@pop_room, @guest2)
+    @pop_room.add_guest_to_room(@pop_room, @guest1)
+    result = @pop_room.add_guest_to_room(@pop_room, @guest2)
+    assert_equal("Room full", result)
+  end
 
 end

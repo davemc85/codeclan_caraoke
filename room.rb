@@ -11,7 +11,11 @@ attr_accessor :playlist, :occupants
   end
 
   def add_guest_to_room(room, guest)
-    room.occupants << guest
+    if @occupants.length > @capacity
+      return "Room full"
+    else
+      room.occupants << guest
+    end
   end
 
   def remove_guest_from_room(room)
