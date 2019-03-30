@@ -26,4 +26,6 @@ attr_accessor :playlist, :occupants
     room.playlist << song
   end
 
+
+
 end

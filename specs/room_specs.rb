@@ -70,4 +70,6 @@ class RoomTest < MiniTest::Test
     assert_equal("Room full", result)
   end
 
+
+
 end

@@ -3,6 +3,7 @@ require('minitest/rg')
 require_relative('../guest.rb')
 require_relative('../room.rb')
 require_relative('../karaoke.rb')
+require('pry')
 
 class GuestTest < MiniTest::Test
 
@@ -37,5 +38,10 @@ class GuestTest < MiniTest::Test
     assert_equal(90.0, @guest1.wallet)
   end
 
+
+  # def test_happy_if_room_has_fav_song
+  #   result = @classics_room.does_it_have_my_song(@classics_room.playlist, @guest1)
+  #   assert_equal("Woohoo!", result)
+  # end
 
 end
