@@ -18,5 +18,8 @@ attr_accessor :playlist, :occupants
     room.occupants.pop(1)
   end
 
+  def add_song_to_playlist(room, song)
+    room.playlist << song
+  end
 
 end

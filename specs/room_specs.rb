@@ -13,6 +13,8 @@ class RoomTest < MiniTest::Test
     @song2 = Song.new("My Way", "Frank Sinatra"),
     @song3 = Song.new("Bohemian Rhapsody", "Queen")
 
+    @song4 = Song.new("Delilah", "Tom Jones")
+
     @classics_room = Room.new("Classics", 25, [@song1, @song2, @song3], [])
 
 
@@ -36,6 +38,18 @@ class RoomTest < MiniTest::Test
   def test_get_room_occupants
     assert_equal(0, @classics_room.occupants.length)
   end
+
+  def test_playlist_length
+    playlist = @classics_room.playlist.length
+    assert_equal(3, playlist)
+  end
+
+  def test_add_song_to_playlist
+    @classics_room.add_song_to_playlist(@classics_room, @song4)
+    playlist = @classics_room.playlist.length
+    assert_equal(4, playlist)
+  end
+
 
   def test_add_guest_to_room
     @classics_room.add_guest_to_room(@classics_room, @guest1)
