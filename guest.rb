@@ -11,5 +11,8 @@ class Guest
     @favourite_artist = favourite_artist
   end
 
+  def pay_entry_fee(entry_fee)
+    @wallet -= entry_fee
+  end
 
 end

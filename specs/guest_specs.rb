@@ -2,11 +2,13 @@ require('minitest/autorun')
 require('minitest/rg')
 require_relative('../guest.rb')
 require_relative('../room.rb')
+require_relative('../karaoke.rb')
 
 class GuestTest < MiniTest::Test
 
   def setup
-    @guest1 = Guest.new("David", 33, 100, "Sweet Caroline", "Neil Diamond")
+    @guest1 = Guest.new("David", 33, 100.0, "Sweet Caroline", "Neil Diamond")
+    @karaoke = Karaoke.new("CodeClan Caraoke", 1000.0, [@rooms], 10.0)
 
   end
 
@@ -19,7 +21,7 @@ class GuestTest < MiniTest::Test
   end
 
   def test_get_guest_wallet_amount
-    assert_equal(100, @guest1.wallet)
+    assert_equal(100.0, @guest1.wallet)
   end
 
   def test_get_guest_favourite_song
@@ -28,6 +30,11 @@ class GuestTest < MiniTest::Test
 
   def test_get_guest_favourite_artist
     assert_equal("Neil Diamond", @guest1.favourite_artist)
+  end
+
+  def test_pay_entry_fee
+    @guest1.pay_entry_fee(@karaoke.entry_fee)
+    assert_equal(90.0, @guest1.wallet)
   end
 
 

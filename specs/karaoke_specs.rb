@@ -40,6 +40,11 @@ class KaraokeTest < MiniTest::Test
     assert_equal(10.0, @karaoke.entry_fee)
   end
 
-  
+  def test_receive_entry_fee
+    @karaoke.receive_entry_fee
+    assert_equal(1010.0, @karaoke.till)
+  end
+
+
 
 end
