@@ -26,6 +26,15 @@ attr_accessor :playlist, :occupants
     room.playlist << song
   end
 
+  def does_it_have_my_song(room, guest)
+    fav_song = room.playlist.map {|song| song.title == guest.favourite_song}
+    if fav_song.length == 0
+      return "boo!"
+    else
+      return "Woohoo!"
+    end
+  end
+
 
 
 end

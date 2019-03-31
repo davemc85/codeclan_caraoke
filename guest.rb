@@ -15,9 +15,9 @@ class Guest
     @wallet -= entry_fee
   end
 
-  # def does_it_have_my_song(playlist, guest)
-  #   fav_song = @classics_room.playlist.find {|song| song.title == @favourite_song}
-  #   if fav_song == nil
+  # def does_it_have_my_song(room, guest)
+  #   fav_song = @room.playlist.map {|song| song.title == @favourite_song}
+  #   if fav_song.length == 0
   #     return "boo!"
   #   else
   #     return "Woohoo!"

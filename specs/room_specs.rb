@@ -22,7 +22,6 @@ class RoomTest < MiniTest::Test
     @guest1 = Guest.new("David", 33, 100.0, "Sweet Caroline", "Neil Diamond")
     @guest2 = Guest.new("Beth", 27, 50.0, "Reach", "S Club 7")
 
-
   end
 
   def test_get_room_name
@@ -41,13 +40,6 @@ class RoomTest < MiniTest::Test
     playlist = @classics_room.playlist.length
     assert_equal(3, playlist)
   end
-
-  def test_add_song_to_playlist
-    @classics_room.add_song_to_playlist(@classics_room, @song4)
-    playlist = @classics_room.playlist.length
-    assert_equal(4, playlist)
-  end
-
 
   def test_add_guest_to_room
     @classics_room.add_guest_to_room(@classics_room, @guest1)
@@ -68,6 +60,17 @@ class RoomTest < MiniTest::Test
     @pop_room.add_guest_to_room(@pop_room, @guest1)
     result = @pop_room.add_guest_to_room(@pop_room, @guest2)
     assert_equal("Room full", result)
+  end
+
+  def test_add_song_to_playlist
+    @classics_room.add_song_to_playlist(@classics_room, @song4)
+    playlist = @classics_room.playlist.length
+    assert_equal(4, playlist)
+  end
+
+  def test_happy_if_room_has_fav_song
+    result = @classics_room.does_it_have_my_song(@classics_room, @guest1)
+    assert_equal("Woohoo!", result)
   end
 
 

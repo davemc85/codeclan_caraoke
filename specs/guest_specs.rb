@@ -40,7 +40,7 @@ class GuestTest < MiniTest::Test
 
 
   # def test_happy_if_room_has_fav_song
-  #   result = @classics_room.does_it_have_my_song(@classics_room.playlist, @guest1)
+  #   result = @classics_room.does_it_have_my_song(@classics_room, @guest1)
   #   assert_equal("Woohoo!", result)
   # end
 
