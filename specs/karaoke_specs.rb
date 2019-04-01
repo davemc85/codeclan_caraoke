@@ -22,9 +22,6 @@ class KaraokeTest < MiniTest::Test
     @song4 = Song.new("Wannabe", "Spice Girls")
     @song5 = Song.new("Baby One More Time", "Britney Spears")
     @song6 = Song.new("Firework", "Katy Perry")
-
-
-
   end
 
 
