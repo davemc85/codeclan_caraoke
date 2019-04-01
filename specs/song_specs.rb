@@ -6,12 +6,12 @@ class SongTest < MiniTest::Test
 
   def setup
 
-    @song1 = Song.new("Sweet Caroline", "Neil Diamond")
-    @song2 = Song.new("My Way", "Frank Sinatra")
-    @song3 = Song.new("Bohemian Rhapsody", "Queen")
-    @song4 = Song.new("Wannabe", "Spice Girls")
-    @song5 = Song.new("Baby One More Time", "Britney Spears")
-    @song6 = Song.new("Firework", "Katy Perry")
+    @song1 = Song.new("Sweet Caroline")
+    @song2 = Song.new("My Way")
+    @song3 = Song.new("Bohemian Rhapsody")
+    @song4 = Song.new("Wannabe")
+    @song5 = Song.new("Baby One More Time")
+    @song6 = Song.new("Firework")
 
 
   end
@@ -20,9 +20,7 @@ class SongTest < MiniTest::Test
     assert_equal("My Way", @song2.title)
   end
 
-  def test_get_song_artist
-    assert_equal("Queen", @song3.artist)
-  end
+
 
 
 

@@ -16,12 +16,12 @@ class KaraokeTest < MiniTest::Test
     @classics_room = Room.new("Classics", 10, [@song1, @song2, @song3], [])
     @pop_room = Room.new("Pop", 10, [@song4, @song5, @song6], [])
 
-    @song1 = Song.new("Sweet Caroline", "Neil Diamond")
-    @song2 = Song.new("My Way", "Frank Sinatra")
-    @song3 = Song.new("Bohemian Rhapsody", "Queen")
-    @song4 = Song.new("Wannabe", "Spice Girls")
-    @song5 = Song.new("Baby One More Time", "Britney Spears")
-    @song6 = Song.new("Firework", "Katy Perry")
+    @song1 = Song.new("Sweet Caroline")
+    @song2 = Song.new("My Way")
+    @song3 = Song.new("Bohemian Rhapsody")
+    @song4 = Song.new("Wannabe")
+    @song5 = Song.new("Baby One More Time")
+    @song6 = Song.new("Firework")
   end
 
 

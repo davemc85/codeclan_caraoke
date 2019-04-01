@@ -8,7 +8,7 @@ require('pry')
 class GuestTest < MiniTest::Test
 
   def setup
-    @guest1 = Guest.new("David", 33, 100.0, "Sweet Caroline", "Neil Diamond")
+    @guest1 = Guest.new("David", 33, 100.0, "Sweet Caroline")
     @karaoke = Karaoke.new("CodeClan Caraoke", 1000.0, [@rooms], 10.0)
 
   end
@@ -29,10 +29,6 @@ class GuestTest < MiniTest::Test
     assert_equal("Sweet Caroline", @guest1.favourite_song)
   end
 
-  def test_get_guest_favourite_artist
-    assert_equal("Neil Diamond", @guest1.favourite_artist)
-  end
-
   def test_pay_entry_fee
     @guest1.pay_entry_fee(@karaoke.entry_fee)
     assert_equal(90.0, @guest1.wallet)
@@ -40,7 +36,7 @@ class GuestTest < MiniTest::Test
 
 
   # def test_happy_if_room_has_fav_song
-  #   result = @classics_room.does_it_have_my_song(@classics_room, @guest1)
+  #   result = @guest1.does_it_have_my_song(@classics_room, @guest1)
   #   assert_equal("Woohoo!", result)
   # end
 
